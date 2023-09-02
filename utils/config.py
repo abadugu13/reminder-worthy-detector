@@ -1,0 +1,1 @@
+TIME_LOG_PATH = "./logs/time.log"
