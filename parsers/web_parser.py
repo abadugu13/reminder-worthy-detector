@@ -6,8 +6,7 @@ from parsers.base import BaseParser
 
 class WebParser(BaseParser):
     def __init__(self, limit=1000):
-        super().__init__()
-        self.limit = limit
+        super().__init__(file_types=[], limit=limit)
 
     def load(self, url):
         response = requests.get(url)

@@ -3,12 +3,10 @@ from PyPDF2 import PdfReader
 
 class PDFParser(BaseParser):
     def __init__(self, limit=1000):
-        super().__init__()
-        self._file_types = ['pdf']
-        self._limit = limit
+        super().__init__(file_types=['pdf'], limit=limit)
     
     def load(self, path):
-        assert path.suffix in self._file_types, 'File must be a pdf file'
+        self.assert_file_type(path)
         return PdfReader(path)
     
     def parse(self, path):
