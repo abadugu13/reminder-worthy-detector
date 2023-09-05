@@ -8,6 +8,6 @@ def timer(func):
         result = func(*args, **kwargs)
         end_time = time.time()
         with TIME_LOG_PATH.open('a') as f:
-            f.write(f'{func.__name__} took {end_time - start_time} seconds to execute\n')
+            f.write(f'{func.__name__} took {end_time - start_time} seconds to execute for {args[0]}\n')
         return result
     return wrapper
