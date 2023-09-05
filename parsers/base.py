@@ -3,7 +3,7 @@ import pathlib
 
 from utils.timer import timer
 
-class Parser(ABC):
+class BaseParser(ABC):
     @abstractmethod
     @timer
     def parse(self, path:pathlib.Path):
